@@ -10,6 +10,7 @@ class CalendarRSSController extends Controller
     public function getIndex()
     {
         $events = Event::get();
-        return view('index', ['events' => $events]);
+
+        return response()->view('index', ['events' => $events])->header('Content-Type', 'text/xml');
     }
 }
