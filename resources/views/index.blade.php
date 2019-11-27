@@ -3,15 +3,16 @@
     <title>CCN Featured RSS Feed</title>
     <link href="https://ccnicr.com/" />
     <author>
-        <name>Corridorn Connection Network</name>
+        <name>Corridor Connection Network</name>
     </author>
     <id>11245566856655</id>
     @foreach ($events as $event)
         <entry>
             <title>{{ $event->summary }}</title>
-            <link href="{{ $event->url }}" />
+            <link href="{{ $event->htmlLink }}" />
             <id>{{ $event->id }}</id>
-            <summary>{{ $event->startDate }} {{ $event->startDateTime }}</summary>
+            <updated>{{ $event->startDateTime->format('M d') }}</updated>
+            <summary>{{ $event->startDateTime->format('g:i A') }}</summary>
             <content>{{ $event->description }}</content>
         </entry>
     @endforeach
