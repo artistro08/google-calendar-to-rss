@@ -9,7 +9,6 @@
     @foreach ($events as $event)
         <entry>
             <title>{{ $event->summary }}</title>
-            <link href="{{ $event->htmlLink }}" />
             <id>{{ $event->id }}</id>
             <updated>{{ $event->startDateTime->format('M d') }}</updated>
             <summary>{{ $event->startDateTime->format('g:i A') }}</summary>
