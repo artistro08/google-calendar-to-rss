@@ -11,7 +11,7 @@
             <title>{{ $event->summary }}</title>
             <id>{{ $event->id }}</id>
             <updated>{{ $event->startDateTime->format('M d') }}</updated>
-            <summary>{{ $event->startDateTime->format('g:i A') }}</summary>
+            <summary>{{ $event->startDateTime->format('g:i A') }} - {{ $event->endDateTime->format('g:i A') }}</summary>
             <content>{{ $event->description }}</content>
         </entry>
     @endforeach
