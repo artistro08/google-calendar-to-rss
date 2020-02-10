@@ -10,9 +10,9 @@
         <entry>
             <title>{{ $event->summary }}</title>
             <id>{{ $event->id }}</id>
-            <updated>{{ $event->startDateTime->format('M d') }}</updated>
-            <summary>{{ $event->startDateTime->format('g:i A') }} - {{ $event->endDateTime->format('g:i A') }}</summary>
-            <content>{{ Str::limit($event->description, 200) }}</content>
+            <updated>{{ $event->startDateTime }}</updated>
+            <summary>{{ Str::limit($event->description, 200) }}</summary>
+            <content>{{ $event->description }}</content>
         </entry>
     @endforeach
 </feed>
