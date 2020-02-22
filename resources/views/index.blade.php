@@ -56,7 +56,7 @@
                 <category term="uncategorized" label="Uncategorized"></category>
             @endif
             <link rel="enclosure" length="10000" type="{{ $event->startDateTime->format('g:i A') }} - {{ $event->endDateTime->format('g:i A') }}"></link>
-            <published>{{ date("Y-m-d\TH:i:sP", strtotime($event->created)) }}</published>
+            <published>{{ $event->startDateTime->format('Y-m-d\TH:i:sP') }}</published>
             <updated>{{ date("Y-m-d\TH:i:sP", strtotime($event->updated)) }}</updated>
             <summary>{{ $event->startDateTime->format('g:i A') }} - {{ $event->endDateTime->format('g:i A') }}</summary>
             <content type="html">
