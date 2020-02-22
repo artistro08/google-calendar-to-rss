@@ -11,3 +11,4 @@
 |
 */
 Route::get('/', 'CalendarRSSController@getIndex');
+Route::get('/featured', 'FeaturedRSSController@getIndex');
