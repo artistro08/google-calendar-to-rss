@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use Spatie\GoogleCalendar\Event;
 use Carbon\Carbon;
 
-class CalendarRSSController extends Controller
+class FeaturedRSSController extends Controller
 {
     public function getIndex()
     {
@@ -15,7 +15,7 @@ class CalendarRSSController extends Controller
         $endOfWeek = Carbon::now()->modify('today +365 days');
         $events = Event::get();
         return response()
-            ->view('index', ['events' => $events])
+            ->view('featured', ['events' => $events])
             ->header('Content-Type', 'application/xml');
     }
 }
