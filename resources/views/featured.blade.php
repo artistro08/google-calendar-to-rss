@@ -55,12 +55,11 @@
             @else
                 <category term="uncategorized" label="Uncategorized"></category>
             @endif
-            <link rel="enclosure" length="10000" type="{{ $event->startDateTime->format('g:i A') }} - {{ $event->endDateTime->format('g:i A') }}"></link>
             <published>{{ date("Y-m-d\TH:i:sP", strtotime($event->created)) }}</published>
             <updated>{{ date("Y-m-d\TH:i:sP", strtotime($event->updated)) }}</updated>
             <summary>{{ $event->startDateTime->format('g:i A') }} - {{ $event->endDateTime->format('g:i A') }}</summary>
             <content type="html">
-                {{ htmlspecialchars($event->description, ENT_XML1, 'UTF-8') }}
+                {{  strip_tags(Str::limit($event->description, 250)) }}
             </content>
         </entry>
     @endforeach
