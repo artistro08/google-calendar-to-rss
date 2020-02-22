@@ -13,7 +13,7 @@ class FeaturedRSSController extends Controller
     {
         $startOfWeek = Carbon::now()->modify('today');
         $endOfWeek = Carbon::now()->modify('today +365 days');
-        $events = Event::get($startOfWeek, $endOfWeek);
+        $events = Event::get();
         return response()
             ->view('featured', ['events' => $events])
             ->header('Content-Type', 'application/xml');
