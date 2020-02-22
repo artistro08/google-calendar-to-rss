@@ -11,9 +11,9 @@ class CalendarRSSController extends Controller
 {
     public function getIndex()
     {
-        $startOfWeek = Carbon::now()->modify('tomorrow');
-        $endOfWeek = Carbon::now()->modify('today +30 days');
-        $events = Event::get($startOfWeek, $endOfWeek);
+        $startOfWeek = Carbon::now()->modify('today');
+        $endOfWeek = Carbon::now()->modify('today +365 days');
+        $events = Event::get();
         return response()
             ->view('index', ['events' => $events])
             ->header('Content-Type', 'application/xml');
